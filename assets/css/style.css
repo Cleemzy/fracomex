@@ -6,7 +6,7 @@
 5.  Arrivage
 6.  collection
 7.  Features
-8.  Blog
+8.  categ
 9.  Clients
 10. Footer
 ==========================================*/
@@ -772,19 +772,38 @@ ul.cart-list > li.total {
 .sale.bg-1{background: #d8924c;}
 .sale.bg-2{background: #47d93c;}
 .product-name {
-    margin-top: 150px;
+    margin-top: 210px;
     position: absolute;
     display: block;
     text-align: center;
-    
   }
+.a-product-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: #000 !important;
+  }    
+.a-product-name:hover {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }    
 .product-price {
-    margin-top: 200px;
+    margin-top: 280px;
     position: absolute;
     display: block;
     text-align: center;
     font-weight: bold;
   }
+.p-product-price {
+    color: #0072cd !important;
+  }  
 
 .new-arrival-cart {
     position: absolute;
@@ -899,11 +918,11 @@ p.arrival-review span {margin-right: 15px;}
 --------------------------------------*/
 .feature {padding:110px 0 0px;}
 
-.feature-content,.blog-content{margin-top: 75px;}
-.single-feature,.single-blog {margin-bottom:30px;}
+.feature-content,.categ-content{margin-top: 75px;}
+.single-feature,.single-categ {margin-bottom:30px;}
 
 /*.single-feature-txt */
-.single-feature-txt,.single-blog-txt{margin-top: 25px;}
+.single-feature-txt,.single-categ-txt{margin-top: 25px;}
 .single-feature-txt p i {
     color:  #efce4a;
     margin-left:  5px;
@@ -911,7 +930,7 @@ p.arrival-review span {margin-right: 15px;}
 span.spacial-feature-icon i {color:  #a9a9a9;}
 span.feature-review {margin-left: 10px;}
 .single-feature-txt p {font-size: 14px;}
-.single-feature-txt h3 a ,.single-blog-txt h2 a{
+.single-feature-txt h3 a ,.single-categ-txt h2 a{
     color: #5f5b57;
     margin: 10px 0px 15px;
 }
@@ -922,19 +941,19 @@ span.feature-review {margin-left: 10px;}
 /*.single-feature-txt */
 
 /*-------------------------------------       
-        8.  Blog
+        8.  categ
 --------------------------------------*/
-.blog {padding:80px 0;}
+.categ {padding:80px 0;}
 
-/*.single-blog*/
-.single-blog{
+/*.single-categ*/
+.single-categ{
     -webkit-transition: 0.3s linear; 
     -moz-transition: 0.3s linear; 
     -ms-transition: 0.3s linear; 
     -o-transition: 0.3s linear; 
     transition: 0.3s linear;
 }
-.single-blog-img{
+.single-categ-img{
     position: relative;
     overflow: hidden;
     -webkit-transition: 0.3s linear; 
@@ -943,23 +962,24 @@ span.feature-review {margin-left: 10px;}
     -o-transition: 0.3s linear; 
     transition: 0.3s linear;
 }
-.single-blog-img img{
+.single-categ-img img{
     width:auto;
     height:auto;
+    min-height: 320px;
     -webkit-transition: .3s linear;
     -moz-transition: .3s linear;
     -ms-transition: .3s linear;
     -o-transition: .3s linear;
     transition: .3s linear;
 }
-.single-blog:hover  img{
+.single-categ:hover  img{
     -webkit-transform:scale(1.3);
     -moz-transform:scale(1.3);
     -ms-transform:scale(1.3);
     -o-transform:scale(1.3);
     transform:scale(1.3);
 }
-.single-blog-img-overlay{
+.single-categ-img-overlay{
     position: absolute;
     content: "";
     top: 0;
@@ -978,27 +998,27 @@ span.feature-review {margin-left: 10px;}
     -o-transition: .3s linear;
     transition: .3s linear;
 }
-.single-blog:hover .single-blog-img-overlay{
+.single-categ:hover .single-categ-img-overlay{
     -webkit-transform:scale(1);
     -moz-transform:scale(1);
     -ms-transform:scale(1);
     -o-transform:scale(1);
     transform:scale(1);
 }
-.single-blog-txt h2 a{text-transform: initial;margin: 0 0 15px 0;}
-.single-blog-txt h3,.single-blog-txt h3 a {
+.single-categ-txt h2 a{text-transform: initial;margin: 0 0 15px 0;}
+.single-categ-txt h3,.single-categ-txt h3 a {
     color: #bcb7b2;
     font-size: 14px;
     font-weight: 400;
 }
-.single-blog-txt h3 a {margin: 0;}
-.single-blog-txt p {
+.single-categ-txt h3 a {margin: 0;}
+.single-categ-txt p {
     font-size: 13px;
     margin-top: 20px;
     color: #95908b;
 }
-.single-blog:hover .single-blog-txt h2 a{color: #25abdb;}
-/*.single-blog*/
+.single-categ:hover .single-categ-txt h2 a{color: #25abdb;}
+/*.single-categ*/
 
 /*-------------------------------------
         9. users
@@ -1219,7 +1239,7 @@ input[type=email] {
     margin-top:20px;
 }
 .owl-controls .owl-buttons .owl-prev{
-    background: #fff;
+    background: #1995cc;
     position: absolute;
     top: 50%;
     left: -8px;
@@ -1227,10 +1247,13 @@ input[type=email] {
     border-radius: 50px;
     box-shadow: 3px 14px 25px -10px #92b4d0;
     transition: background 0.5s ease 0s;
-    z-index: 1;
+    z-index: 0;
 }
+.owl-controls .owl-buttons .owl-prev::after, .owl-controls .owl-buttons .owl-next::after {
+    color: #fff !important;
+  }
 .owl-controls .owl-buttons .owl-next{
-    background: #fff;
+    background: #1995cc;
     position: absolute;
     top: 50%;
     right: -8px;
@@ -1238,7 +1261,7 @@ input[type=email] {
     border-radius: 50px;
     box-shadow: -3px 14px 25px -10px #92b4d0;
     transition: background 0.5s ease 0s;
-    z-index: 1;
+    z-index: 0;
 }
 .owl-controls .owl-buttons .owl-prev:after,
 .owl-controls .owl-buttons .owl-next:after{
@@ -1265,7 +1288,8 @@ input[type=email] {
 }
 
 #carousel-promotions-indicators{
-    bottom: -10%; 
+    bottom: -3rem;
+    z-index: 0;
 }
 
 #user-icon-dropdown{
@@ -1275,4 +1299,63 @@ input[type=email] {
 #shop-banner{
     margin-top: 0px !important;
     margin-bottom: 0px !important;
+}
+
+/*sidebar category*/
+ .all-category {
+    left: 10px;
+  } 
+  ul.category{ 
+  line-height: 2;
+  width: 100%;
+  }
+  #collapse-category{
+    outline: 2px solid #1995cc;
+    outline-offset: -6px;
+  } 
+  #li-category {
+    text-align: start;
+  }
+  .sub-category {
+    margin-left: 40px;
+  }  
+  .has-child > a:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f078";
+    font-style: normal;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    background: 0 0;
+    position: absolute;
+    right: 15px;
+    transition: content 0.5s ease 0s;
+  }
+  .has-child.collapsed > a:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    font-style: normal;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    background: 0 0;
+    position: absolute;
+    right: 15px;
+  }
+  /*filter*/
+.col-filter{
+float: inline-end;
+text-align: end;
+margin: 0 10px 10px;
+margin-bottom: -10px !important;
 }
